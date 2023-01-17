@@ -8,4 +8,8 @@ class Product
     @price = params[:price]
     @units = params[:units]
   end
+
+  def to_s
+    "#{@price} rub. (осталось #{units})"
+  end
 end

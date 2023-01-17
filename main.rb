@@ -14,11 +14,20 @@ require_relative 'lib/product'
 require_relative 'lib/movie'
 require_relative 'lib/book'
 
-# Пока функционал у нас очень простой, но фильм мы создать уже можем. Создадим
-# новый товар — фильм за 990 рублей, и скажем, на складе их осталось 5 штук.
-leon = Movie.new(price: 990, amount: 5)
-book = Book.new(price: 1990, amount: 15)
+leon = Movie.new(price: 1990, units: 15, title: 'Леон', year: 1994, director: 'Люк Бессон')
+idiot = Book.new(price: 599, units: 8, title: 'Идиот', genre: 'роман', author: 'Федор Достоевский')
+fight_club = Movie.new(price: 1990, units: 15, title: 'Fight Club', year: 1999, director: 'David Fincher')
+the_shining = Book.new(price: 599, units: 8, title: 'The Shining', genre: 'horror', author: 'Stephen King')
+inception = Movie.new(price: 3000, units: 20, title: 'Inception', year: 2010, director: 'Christopher Nolan')
+to_kill_a_mockingbird = Book.new(price: 499, units: 12, title: 'To Kill a Mockingbird', genre: 'drama', author: 'Harper Lee')
+the_godfather = Movie.new(price: 2000, units: 15, title: 'The Godfather', year: 1972, director: 'Francis Ford Coppola')
+book_1984 = Book.new(price: 399, units: 10, title: '1984', genre: 'dystopian', author: 'George Orwell')
 
-# Просто чтобы не скучать выведем это в консоль
-puts "Фильм Леон стоит #{leon.price} руб."
-puts "Книга Деньги стоит #{book.price} руб."
+puts leon.to_s
+puts idiot.to_s
+puts fight_club.to_s
+puts the_shining.to_s
+puts inception.to_s
+puts to_kill_a_mockingbird.to_s
+puts the_godfather.to_s
+puts book_1984.to_s
