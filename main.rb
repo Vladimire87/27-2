@@ -21,7 +21,7 @@ the_shining = Book.new(price: 599, units: 8, title: 'The Shining', genre: 'horro
 inception = Movie.new(price: 3000, units: 20, title: 'Inception', year: 2010, director: 'Christopher Nolan')
 to_kill_a_mockingbird = Book.new(price: 499, units: 12, title: 'To Kill a Mockingbird', genre: 'drama', author: 'Harper Lee')
 the_godfather = Movie.new(price: 2000, units: 15, title: 'The Godfather', year: 1972, director: 'Francis Ford Coppola')
-book_1984 = Book.new(price: 399, units: 10, title: '1984', genre: 'dystopian', author: 'George Orwell')
+book1984 = Book.new(price: 399, units: 10, title: '1984', genre: 'dystopian', author: 'George Orwell')
 
 puts leon.to_s
 puts idiot.to_s
@@ -30,4 +30,4 @@ puts the_shining.to_s
 puts inception.to_s
 puts to_kill_a_mockingbird.to_s
 puts the_godfather.to_s
-puts book_1984.to_s
+puts book1984.to_s
