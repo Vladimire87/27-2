@@ -2,7 +2,7 @@
 
 # Для книги — название, жанр и автора
 class Book < Product
-  attr_reader :title, :genre, :author
+  attr_accessor :title, :genre, :author
 
   def initialize(params)
     super
@@ -14,5 +14,11 @@ class Book < Product
 
   def to_s
     "Книга «#{@title}», #{@genre}, автор - #{@author}, #{super}"
+  end
+
+  def update(params)
+    @title = params[:title] if params[:title]
+    @genre = params[:genre] if params[:genre]
+    @author = params[:author] if params[:author]
   end
 end
