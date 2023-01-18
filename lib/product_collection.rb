@@ -4,7 +4,8 @@
 class ProductCollection
   PRODUCT_TYPES = {
     film: { dir: 'films', class: Movie },
-    book: { dir: 'books', class: Book }
+    book: { dir: 'books', class: Book },
+    disk: { dir: 'disk', class: Disk }
   }.freeze
 
   def initialize(products = [])
@@ -30,22 +31,17 @@ class ProductCollection
   def sort!(params)
     # Делает выбор по параметру by
     case params[:by]
-    when :title
-      # Если запросили сортировку по наименованию
-      @products.sort_by!(&:to_s)
-    when :price
-      # Если запросили сортировку по цене
-      @products.sort_by!(&:price)
-    when :stock
-      # Если запросили сортировку по количеству
-      @products.sort_by!(&:stock)
+    when :title then @products.sort_by!(&:to_s)
+    when :price then @products.sort_by!(&:price)
+    when :stock then @products.sort_by!(&:stock)
+    when :type  then @products.sort_by! { |product| PRODUCT_TYPES.key(product.class) }
     end
-
     # Если запросили сортировку по возрастанию
     @products.reverse! if params[:order] == :asc
-
-    # Возвращаем ссылку на экземпляр, чтобы у него по цепочке можно было вызвать
-    # другие методы.
     self
+  end
+
+  def cart
+    # todo
   end
 end

@@ -2,7 +2,7 @@
 
 # Для книги — название, жанр и автора
 class Book < Product
-  attr_accessor :title, :genre, :author
+  attr_accessor :title, :author, :year
 
   def self.from_file(folder_path)
     Dir["#{folder_path}/*.txt"].map { |file| new_from_file(file) }
@@ -23,17 +23,17 @@ class Book < Product
     super
 
     @title = params[:title]
-    @genre = params[:genre]
+    @year = params[:year]
     @author = params[:author]
   end
 
   def to_s
-    "Книга «#{@title}», #{@genre}, автор - #{@author}, #{super}"
+    "Книга: «#{@title}», автор - «#{@author}», #{super}"
   end
 
   def update(params)
     @title = params[:title] if params[:title]
-    @genre = params[:genre] if params[:genre]
+    @year = params[:year] if params[:year]
     @author = params[:author] if params[:author]
   end
 end

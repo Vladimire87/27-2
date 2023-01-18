@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # class
-class Movie < Product
-  attr_accessor :title, :year, :director
+class Disk < Product
+  attr_accessor :title, :singer, :genre, :year
 
   def self.from_file(folder_path)
     Dir["#{folder_path}/*.txt"].map { |file| new_from_file(file) }
@@ -12,10 +12,11 @@ class Movie < Product
     lines = File.readlines(file, encoding: 'UTF-8').map(&:strip)
     new(
       title: lines[0],
-      director: lines[1],
-      year: lines[2].to_i,
-      price: lines[3].to_f,
-      stock: lines[4].to_i
+      singer: lines[1],
+      genre: lines[2],
+      year: lines[3].to_i,
+      price: lines[4].to_f,
+      stock: lines[5].to_i
     )
   end
 
@@ -23,17 +24,19 @@ class Movie < Product
     super
 
     @title = params[:title]
+    @singer = params[:singer]
+    @genre = params[:genre]
     @year = params[:year]
-    @director = params[:director]
   end
 
   def to_s
-    "Фильм: «#{@title}», год: #{@year}, реж. |#{@director}|, #{super}"
+    "Диск: «#{@title}», исполнитель - #{@singer}, жанр: #{genre} год: #{@year}, #{super}"
   end
 
   def update(params)
     @title = params[:title] if params[:title]
+    @singer = params[:singer] if params[:singer]
+    @genre = params[:genre] if params[:genre]
     @year = params[:year] if params[:year]
-    @director = params[:director] if params[:director]
   end
 end
