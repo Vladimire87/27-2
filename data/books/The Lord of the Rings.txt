@@ -1,0 +1,5 @@
+The Lord of the Rings
+Author: J.R.R. Tolkien
+Year: 1954
+Price: $17.99
+Stock: 20

@@ -1,0 +1,5 @@
+The Hitchhiker's Guide to the Galaxy
+Author: Douglas Adams
+Year: 1979
+Price: $12.99
+Stock: 25

@@ -2,19 +2,23 @@
 
 # product class
 class Product
-  attr_accessor :price, :units
+  attr_accessor :price, :stock
 
   def initialize(params)
     @price = params[:price]
-    @units = params[:units]
+    @stock = params[:stock]
   end
 
   def to_s
-    "#{@price} rub. (осталось #{units})"
+    "$#{@price.round(2)} (осталось #{stock})"
   end
 
   def update(params)
     @price = params[:price] if params[:price]
-    @units = params[:units] if params[:units]
+    @stock = params[:stock] if params[:stock]
+  end
+
+  def self.from_file(file_path)
+    raise NotImplementedError
   end
 end

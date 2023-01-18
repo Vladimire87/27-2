@@ -1,0 +1,5 @@
+The Catcher in the Rye
+Author: J.D. Salinger
+Year: 1951
+Price: $11.99
+Stock: 35
