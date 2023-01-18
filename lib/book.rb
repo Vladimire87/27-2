@@ -12,7 +12,7 @@ class Book < Product
     lines = File.readlines(file, encoding: 'UTF-8').map(&:strip)
     new(
       title: lines[0],
-      director: lines[1],
+      author: lines[1],
       year: lines[2].to_i,
       price: lines[3].to_f,
       stock: lines[4].to_i

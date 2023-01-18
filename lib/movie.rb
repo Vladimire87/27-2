@@ -36,8 +36,4 @@ class Movie < Product
     @year = params[:year] if params[:year]
     @director = params[:director] if params[:director]
   end
-
-  def from_file
-    # todo
-  end
 end
